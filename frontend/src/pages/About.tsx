@@ -315,7 +315,7 @@ const About = () => {
                       <div>
                         <h4 className="text-[#6C2BD9] font-medium mb-3">Dataset Statistics</h4>
                         <ul className="text-[#2E2E2E] text-sm space-y-1">
-                          <li><span className="text-[#E91E63]">•</span> Total Images: Approximately 1,00,000</li>
+                          <li><span className="text-[#E91E63]">•</span> Total Images: Approximately 14,000</li>
                           <li><span className="text-[#E91E63]">•</span> Balanced class distribution</li>
                           <li><span className="text-[#E91E63]">•</span> High-quality Images</li>
                           <li><span className="text-[#E91E63]">•</span> Pre-defined class Labels</li>

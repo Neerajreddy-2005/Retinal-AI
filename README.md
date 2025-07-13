@@ -77,7 +77,6 @@ The backend will be available at `http://localhost:5000`
 - TypeScript
 - Vite
 - Tailwind CSS
-- ESLint
 
 ### Backend
 - Python
