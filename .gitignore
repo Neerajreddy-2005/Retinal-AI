@@ -51,7 +51,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 # TensorFlow Lite model (if it's too large)
-*.tflite
+#*.tflite
 
 # System Files
 Thumbs.db 
