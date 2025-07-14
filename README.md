@@ -1,14 +1,8 @@
 # Retinal AI
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen)](https://retinal-ai.netlify.app/)
+[![Live](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen)](https://retinal-ai.netlify.app)
 
 **Retinal AI** is a web application for automated retinal disease diagnosis using deep learning. The project features a React (Vite) frontend and a Flask backend with a TensorFlow Lite model. It is designed for easy deployment and use on any machine.
-
----
-
-## 🚀 Live Demo
-- **Frontend:** [https://retinal-ai.netlify.app/](https://retinal-ai.netlify.app/)
-- **Backend:** Hosted on Render (see below for setup)
 
 ---
 
@@ -76,36 +70,6 @@ VITE_BACKEND_URL=http://localhost:5000
 npm run dev  # or bun run dev
 ```
 - The frontend will start on `http://localhost:5173` by default.
-
----
-
-## 🌐 Deployment
-
-### Backend (Render)
-- Deploy the `backend/` folder as a web service on [Render](https://render.com/).
-- Set the start command to:
-  ```
-  gunicorn app:app --bind 0.0.0.0:$PORT
-  ```
-- Add `gunicorn` to `requirements.txt` if not present.
-- The backend will be available at a public URL (e.g., `https://retinal.render.com`).
-
-### Frontend (Netlify)
-- Deploy the `frontend/` folder on [Netlify](https://www.netlify.com/).
-- **Build command:** `npm run build`
-- **Publish directory:** `frontend/dist`
-- **Environment variable:**
-  - `VITE_BACKEND_URL=https://retinal-ai.onrender.com`
-- The live frontend will be available at [https://retinal-ai.netlify.app/](https://retinal-ai.netlify.app/).
-
----
-
-## ⚙️ Environment Variables
-
-- **Frontend:**
-  - `VITE_BACKEND_URL` — URL of the backend API (e.g., `http://localhost:5000` for local, or your Render URL for production)
-- **Backend:**
-  - `PORT` — (Set automatically by Render)
 
 ---
 
