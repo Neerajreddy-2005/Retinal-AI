@@ -1,8 +1,7 @@
 # Retinal AI
 
-[![Live](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen)](https://retinal-ai.netlify.app)
-
 **Retinal AI** is a web application for automated retinal disease diagnosis using deep learning. The project features a React (Vite) frontend and a Flask backend with a TensorFlow Lite model. It is designed for easy deployment and use on any machine.
+Visit the Website [Click Here](https://retinal-ai.netlify.app)
 
 ---
 
