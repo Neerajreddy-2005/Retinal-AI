@@ -39,12 +39,14 @@ export const COLOR_MAP = {
   Normal: "#95D45A"  // Light green
 };
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 export const mockPrediction = async (file: File): Promise<any> => {
   const formData = new FormData();
   formData.append('image', file);
 
   try {
-    const response = await fetch('http://localhost:5000/predict', {
+    const response = await fetch(`${BACKEND_URL}/predict`, {
       method: 'POST',
       body: formData,
     });
