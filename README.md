@@ -1,102 +1,113 @@
-# Project Name
+# Retinal AI
 
-A full-stack application with a React/TypeScript frontend and Python backend, featuring machine learning capabilities.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen)](https://retinal-ai.netlify.app/)
 
-## Project Structure
+**Retinal AI** is a web application for automated retinal disease diagnosis using deep learning. The project features a React (Vite) frontend and a Flask backend with a TensorFlow Lite model. It is designed for easy deployment and use on any machine.
+
+---
+
+## 🚀 Live Demo
+- **Frontend:** [https://retinal-ai.netlify.app/](https://retinal-ai.netlify.app/)
+- **Backend:** Hosted on Render (see below for setup)
+
+---
+
+## 🗂️ Project Structure
 
 ```
-project-root/
-├── frontend/           # React/TypeScript frontend application
-│   ├── src/           # Source code
-│   ├── public/        # Static assets
-│   └── ...           # Configuration files
-└── backend/           # Python backend application
-    ├── app.py        # Main application file
-    ├── model.tflite  # TensorFlow Lite model
-    └── requirements.txt
+Retinal-AI/
+  ├── backend/
+  │   ├── app.py                # Flask backend API
+  │   ├── model.tflite          # TensorFlow Lite model
+  │   ├── requirements.txt      # Backend dependencies
+  │   └── venv/                 # (optional) Python virtual environment
+  ├── frontend/
+  │   ├── src/                  # React source code
+  │   ├── public/               # Static assets
+  │   ├── package.json          # Frontend dependencies
+  │   ├── vite.config.ts        # Vite config
+  │   └── ...                   # Other config and build files
+  └── README.md                 # Project documentation
 ```
 
-## Prerequisites
+---
 
-- Node.js (v16 or higher)
-- Python 3.8 or higher
-- npm or yarn package manager
+## 🛠️ How the Project Works
 
-## Frontend Setup
+1. **User uploads a retinal image via the Diagnosis page (frontend).**
+2. **Frontend sends the image to the backend `/predict` endpoint.**
+3. **Backend processes the image using a TensorFlow Lite model and returns a diagnosis.**
+4. **Frontend displays the result, confidence, and recommendations.**
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
+---
 
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+## 🖥️ Local Development & Setup
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Neerajreddy-2005/Retinal-AI.git
+cd Retinal-AI
+```
 
-The frontend will be available at `http://localhost:5173`
+### 2. Backend Setup
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+- **Run the backend:**
+```bash
+python app.py
+```
+- The backend will start on `http://localhost:5000` by default.
 
-## Backend Setup
+### 3. Frontend Setup
+```bash
+cd ../frontend
+npm install  # or bun install
+```
+- **Create a `.env` file in `frontend/` with:**
+```
+VITE_BACKEND_URL=http://localhost:5000
+```
+- **Run the frontend:**
+```bash
+npm run dev  # or bun run dev
+```
+- The frontend will start on `http://localhost:5173` by default.
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
+---
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+## 🌐 Deployment
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Backend (Render)
+- Deploy the `backend/` folder as a web service on [Render](https://render.com/).
+- Set the start command to:
+  ```
+  gunicorn app:app --bind 0.0.0.0:$PORT
+  ```
+- Add `gunicorn` to `requirements.txt` if not present.
+- The backend will be available at a public URL (e.g., `https://retinal.render.com`).
 
-4. Start the backend server:
-   ```bash
-   python app.py
-   ```
+### Frontend (Netlify)
+- Deploy the `frontend/` folder on [Netlify](https://www.netlify.com/).
+- **Build command:** `npm run build`
+- **Publish directory:** `frontend/dist`
+- **Environment variable:**
+  - `VITE_BACKEND_URL=https://retinal-ai.onrender.com`
+- The live frontend will be available at [https://retinal-ai.netlify.app/](https://retinal-ai.netlify.app/).
 
-The backend will be available at `http://localhost:5000`
+---
 
-## Technologies Used
+## ⚙️ Environment Variables
 
-### Frontend
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
+- **Frontend:**
+  - `VITE_BACKEND_URL` — URL of the backend API (e.g., `http://localhost:5000` for local, or your Render URL for production)
+- **Backend:**
+  - `PORT` — (Set automatically by Render)
 
-### Backend
-- Python
-- Flask
-- TensorFlow Lite
+---
 
-## Development
-
-- Frontend development server runs on port 5173
-- Backend API server runs on port 5000
-- Make sure both servers are running for full functionality
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
+## 📄 License
+This project is licensed under the MIT License. 
